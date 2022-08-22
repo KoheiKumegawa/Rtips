@@ -17,8 +17,8 @@ arc <- pre_arc[which(pre_arc$TSSEnrichment > cutoff_TSSe & pre_arc$nFrags > cuto
 
 #clustering
 arc <- addIterativeLSI(arc, useMatrix = "TileMatrix", name = "IterativeLSI") %>%
-  addClusters(., reducedDims = "IterativeLSI", maxClusters = 30, force = T) %>%
-  addUMAP(., reducedDims = "IterativeLSI", force = T)
+       addClusters(., reducedDims = "IterativeLSI", maxClusters = 30, force = T) %>%
+       addUMAP(., reducedDims = "IterativeLSI", force = T)
 
 #call peaks
 pathToMacs2 <- findMacs2()
