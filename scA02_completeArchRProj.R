@@ -9,7 +9,7 @@ addArchRThreads(threads = 8)
 
 #cutoff setting
 cutoff_TSSe   <- 8
-cutoff_nFrags <- 1500 
+cutoff_nFrags <- 2500 
 
 #filter cells
 pre_arc <- readRDS("rds/pre_arc.rds")
