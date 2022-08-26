@@ -82,14 +82,17 @@ TSSenrich <- function(
     suppressWarnings(max(x[is.finite(x)], na.rm=TRUE))
   }
   
+  #TSS enrichment score                                 
   e <- max_finite(profile_norm_smooth[(flank-range):(flank+range)])
-  
+                                     
+  #Insersion profiles                                  
   rownames(profile_mat_norm_smooth) <- c(-2000:2000)
   plotDF <- reshape2::melt(profile_mat_norm_smooth)
   colnames(plotDF) <- c("distance", "sample", "normInsert")
   
+  #fragment width                                   
   w <- as.numeric(width(fragments))
-
+                                     
   out <- list(enrichScore = e, plotDF = plotDF, fragmentWidth = w)
   message(sprintf("ATAC QC metrics successfully calculated!"))
   return(out)
