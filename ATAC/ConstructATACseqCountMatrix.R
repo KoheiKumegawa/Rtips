@@ -2,8 +2,9 @@
 # ConstructATACseqCountMatrix.R
 #------------------------------------------------------------------------------
 #last update: 2022-08-29
-#Kohei Kumegawa, Japanese Foundation for Cancer Research
-#method and code from Corces et al Science 2018 
+#method from Corces et al Science 2018
+#code from https://github.com/GreenleafLab/10x-scATAC-2019/blob/master/code/02_Get_Peak_Set_hg19_v2.R
+#modified by Kohei Kumegawa, Japanese Foundation for Cancer Research
 library(Rsamtools)
 library(data.table)
 library(dplyr)
