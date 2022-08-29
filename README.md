@@ -1,3 +1,6 @@
 # Rtips
-Kohei Kumegawa, M.D. Clinical Research Fellow, Japanese Foundation for Cancer Research <br>
 R codes for bioinformatics analysis
+
+## References
+[Greenleaf Lab Github](https://github.com/GreenleafLab) for scATAC-seq, ATAC-seq, edgeR wrapper, and so on   
+[Gabriel Kinker Github](https://github.com/gabrielakinker/CCLE_heterogeneity) for scRNA NMF analysis  
