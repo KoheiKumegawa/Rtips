@@ -1,6 +1,8 @@
 #-------------------------------------------------------
 # edgeR_PairwiseFunction.R
 #-------------------------------------------------------
+#this code originally introduced by Jeff Granja
+#modified by Kohei Kumegawa
 library(edgeR)
 library(dplyr)
 '%ni%' = Negate('%in%')
