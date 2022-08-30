@@ -151,7 +151,7 @@ TSSenrich <- function(
 bamFiles  <- list.files("data/", pattern = ".rmdup.bam") %>% `names<-`(., gsub(".rmdup.bam", "", .))
 fragments <- parallel::mclapply(names(bamFiles), 
                                 function(x){
-                                  out <- bamToFragmentGR(bamPATH = paste0("../data/", bamFiles[x]), 
+                                  out <- bamToFragmentGR(bamPATH = paste0("data/", bamFiles[x]), 
                                                          bamNAME = x, 
                                                          bamFlag = scanBamFlag(isMinusStrand = FALSE, isProperPair  = TRUE))
                                   return(out)
