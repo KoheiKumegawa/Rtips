@@ -29,8 +29,8 @@ arc <- addGroupCoverages(arc, groupBy = "Clusters") %>%
        addPeakMatrix(.)
 
 #calculate motif deviation
-arc <- addMotifAnnotations(arc, motifSet = "homer", name = "homer")
-arc <- addMotifAnnotations(arc, motifSet = "cisbp", name = "cisbp")
+arc <- addMotifAnnotations(arc, motifSet = "homer", annoName = "homer")
+arc <- addMotifAnnotations(arc, motifSet = "cisbp", annoName = "cisbp")
 arc <- addBgdPeaks(arc) %>% addDeviationsMatrix(., peakAnnotation = "homer") %>% addDeviationsMatrix(., peakAnnotation = "cisbp")
 
 #save rds
