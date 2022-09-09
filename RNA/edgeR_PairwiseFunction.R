@@ -51,7 +51,7 @@ edgeR_pairwise <- function(se, compareCol = "Group", topGroup, bottomGroup, comp
   message("Organizing Output...")
   out <- data.frame(row.names = row.names(e),
                     log2Mean = e$logCPM,
-                    log2FoldChange = e$logFC,
+                    log2FC = e$logFC,
                     pval = e$PValue,
                     FDR = e$FDR)
   
