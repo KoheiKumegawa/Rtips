@@ -35,6 +35,13 @@ diff_se <- list(
 )
 saveRDS(diff_se, "rds/diff_se.rds")
 
+#mean score for each clusters
+summarize_means <- lapply(c(c("GeneScore", "HomerMotif", "CisbpMotif")), function(x){
+  out <- assays(diff_se[[x]])$Mean %>% `rownames<-`(., mcols(diff_se[[x]])$name)
+  write.csv(out, paste0("output/Tables/CA_ClusterMeans_", x, ".csv"))
+  return(NULL)
+})
+
 #summarize test for genescore, homermotif, cisbpmotif
 summarize_test <- lapply(c("GeneScore", "HomerMotif", "CisbpMotif"), function(x){
   res <- lapply(names(diff_se[[x]]@assays@data), function(y){
