@@ -53,7 +53,7 @@ edgeR_pairwise <- function(se, compareCol = "Group", topGroup, bottomGroup, comp
   message("Organizing Output...")
   out <- data.frame(row.names = row.names(e),
                     log2Mean = e$logCPM,
-                    log2FoldChange = e$logFC,
+                    log2FC = e$logFC,
                     pval = e$PValue,
                     FDR = e$FDR)
   
@@ -89,18 +89,4 @@ edgeR_pairwise_helper <- function(se, design = ~Group){
     glmQLFit(., design = modelMatrix)
   
   return(list(design = design, diffTestMethod = mainMethod, diffTestResults = out))
-}
-
-#extract DAR function
-extractDifferentialFeatures <- function(
-  DiffTestSE = NULL,
-  cutoffFDR = 0.01,
-  cutoffLog2FC = 1
-){
-  res <- DiffTestSE@rowRanges[which(DiffTestSE@assays@data$differential[,"FDR"] < cutoffFDR &
-                                      DiffTestSE@assays@data$differential[,"log2FoldChange"] > cutoffLog2FC)]
-  tmp <- DiffTestSE@assays@data$differential[res$name,"FDR"]
-  df  <- data.frame(row.names = names(sort(tmp)), rank = c(1:length(names(sort(tmp)))))
-  res$rank <- df[res$name, "rank"]
-  return(res)
 }
